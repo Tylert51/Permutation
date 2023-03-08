@@ -58,12 +58,13 @@ public class Permutation {
         return possibleNums;
     }
 
-    public static String printPermutn(String str, String ans, String builder)
+    public static void permute(String str, String ans, ArrayList<String> answers)
     {
 
         // If string is empty
         if (str.length() == 0) {
-            builder = (ans + " ");
+            answers.add(ans + " ");
+            return;
         }
 
         for (int i = 0; i < str.length(); i++) {
@@ -77,10 +78,10 @@ public class Permutation {
                     str.substring(i + 1);
 
             // Recursive call
-            printPermutn(ros, ans + letter, builder);
+            permute(ros, ans + letter, answers);
 
         }
-        return builder;
+
     }
 
 
